@@ -4,13 +4,12 @@ const fs = require('fs');
 
 try {
     const fileTemplate = core.getInput('fileTemplate');
-    const variables = core.getInput('variables');
-    const outputFolder = core.getInput('outputFolder');
-    const outputFileName = core.getInput('outputFileName');
+    const variables = JSON.parse(core.getInput('variables'));
+    const fileOutput = core.getInput('fileOutput');
 
     ejs.renderFile(fileTemplate, variables, {}, function(err, str){
         // str => Rendered HTML string
-        fs.writeFile(`${outputFolder}/${outputFileName}`, str, err => {
+        fs.writeFile(`${fileOutput}`, str, err => {
             if (err) {
               throw new Error(err);
             }

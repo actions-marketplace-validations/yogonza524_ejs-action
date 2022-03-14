@@ -1,5 +1,5 @@
 name: 'EJS Action'
-description: 'Check your EJS files templates'
+description: 'Create a file rendering using EJS'
 inputs:
   fileTemplate:  # EJS File
     description: 'Input file path'
@@ -7,11 +7,8 @@ inputs:
   variables:
     description: 'JSON String with variables to replace fileTemplate'
     required: true
-  outputFolder:
-    description: 'Output file path'
-    required: false
-  outputFileName:
-    description: 'Output file name'
+  fileOutput:
+    description: 'Output file path (with filename and extension)'
     required: true
 runs:
   using: 'node16'
