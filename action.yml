@@ -1,4 +1,4 @@
-name: 'EJS Lint'
+name: 'EJS Action'
 description: 'Check your EJS files templates'
 inputs:
   fileTemplate:  # EJS File
